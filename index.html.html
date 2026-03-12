@@ -145,7 +145,7 @@
 
   <!-- Setup warning (shown until script URL is added) -->
   <div class="setup-banner" id="setup-banner">
-    ⚙️ <strong>Setup needed:</strong> Open this file in a text editor and replace <strong>https://script.google.com/macros/s/AKfycbxR1iH_ST4ctjpEJPxksdB0Qfa3qZsyatAtNHGanNRjMy6ojy_LzyXyVE1k1Q4YmdLg/exec</strong> with your Google Apps Script web app URL. See the setup instructions below.
+    ⚙️ <strong>Setup needed:</strong> Open this file in a text editor and replace <strong>YOUR_APPS_SCRIPT_URL</strong> with your Google Apps Script web app URL. See the setup instructions below.
   </div>
 
   <div class="header">
@@ -208,7 +208,7 @@
   // =====================================================
   // 👇 STEP 1: REPLACE THIS with your Google Apps Script URL
   // It looks like: https://script.google.com/macros/s/ABC123.../exec
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxR1iH_ST4ctjpEJPxksdB0Qfa3qZsyatAtNHGanNRjMy6ojy_LzyXyVE1k1Q4YmdLg/exec";
+  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwIw8AMjHWo3rRm6Rl79YKTyTBk4sLts_GNm5YSsEse74v93kcC0-GMVjhIkOKAMPgL/exec";
   // =====================================================
   // 👆 THAT'S THE ONLY LINE YOU NEED TO CHANGE
 
@@ -216,7 +216,7 @@
   const ADMIN_PASSWORD = "jimjimjim"; // Change this if you like!
 
   // Hide setup banner if URL has been configured
-  if (SCRIPT_URL !== "https://script.google.com/macros/s/AKfycbxR1iH_ST4ctjpEJPxksdB0Qfa3qZsyatAtNHGanNRjMy6ojy_LzyXyVE1k1Q4YmdLg/exec") {
+  if (SCRIPT_URL !== "YOUR_APPS_SCRIPT_URL") {
     document.getElementById('setup-banner').classList.add('hidden');
   }
 
@@ -232,7 +232,7 @@
   }
 
   async function loadEntries() {
-    if (SCRIPT_URL === "https://script.google.com/macros/s/AKfycbxR1iH_ST4ctjpEJPxksdB0Qfa3qZsyatAtNHGanNRjMy6ojy_LzyXyVE1k1Q4YmdLg/exec") {
+    if (SCRIPT_URL === "YOUR_APPS_SCRIPT_URL") {
       document.getElementById('entry-list').innerHTML = '<div class="empty-state">Configure the Apps Script URL to see live entries.</div>';
       document.getElementById('count-badge').textContent = '—';
       return [];
@@ -272,7 +272,7 @@
 
     if (!name) { showToast('Please enter your name!'); return; }
     if (guessRaw === '' || isNaN(guess) || guess < 0) { showToast('Please enter a valid number!'); return; }
-    if (SCRIPT_URL === "https://script.google.com/macros/s/AKfycbxR1iH_ST4ctjpEJPxksdB0Qfa3qZsyatAtNHGanNRjMy6ojy_LzyXyVE1k1Q4YmdLg/exec") { showToast('Script URL not configured yet!'); return; }
+    if (SCRIPT_URL === "YOUR_APPS_SCRIPT_URL") { showToast('Script URL not configured yet!'); return; }
 
     const btn = document.getElementById('submit-btn');
     btn.disabled = true;
